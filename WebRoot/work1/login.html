@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>login.html</title>
+	
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta name="content-type" content="text/html; charset=GB18030">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+
+  </head>
+  
+  <body>
+    <form action="" method="post" name="myform" onSubmit="return checkphone();"/>
+	            电话号码<input type="text" name="tel">
+	            <a href="#"onClick="fun()">></a><br>
+	            客户名称<input type="text" name="id"><br>
+	            登录密码<input type="text" name="pwd"><br>
+	            <input type="submit" value="输入验证">
+	            <input type="reset" value="重输">
+	            <button type="button">退出</button>
+    </form>  
+    <script type="text/javascript">
+ 		function fun(){
+ 			alert("电话号码规则：\n1.电话号码应为数字\n2.如带区号则在区号与号码中间插入-号\n3.电话号码为8位数字，区号为4位数字");
+ 		}
+ 		
+ 		function checkphone(){ 
+		//	var tel= document.getElementById('tel').value; 
+		var tel=document.myform.tel.value;
+			if(!/^(\(\d{4}\)|\d{4}-|\s)?\d{8}$/.test(tel)){ 
+				alert("电话号码有误，请重新输入");
+				return false;
+				} 
+			return true;
+			} 
+    </script>
+  </body>
+</html>
